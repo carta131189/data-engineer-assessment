@@ -1,22 +1,40 @@
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
+import psycopg2
 
 from src.config.settings import settings
 
 
 def get_engine() -> Engine:
+    """
+    SQLAlchemy Engine
+    """
 
-    connection_string = (
+    url = (
         f"postgresql+psycopg2://"
-        f"{settings.DB_USER}:"
-        f"{settings.DB_PASSWORD}@"
-        f"{settings.DB_HOST}:"
-        f"{settings.DB_PORT}/"
-        f"{settings.DB_NAME}"
+        f"{settings.POSTGRES_USER}:"
+        f"{settings.POSTGRES_PASSWORD}@"
+        f"{settings.POSTGRES_HOST}:"
+        f"{settings.POSTGRES_PORT}/"
+        f"{settings.POSTGRES_DB}"
     )
 
     return create_engine(
-        connection_string,
-        echo=False,
-        future=True
+        url,
+        pool_pre_ping=True,
+        future=True,
+    )
+
+
+def get_psycopg_connection():
+    """
+    psycopg2 connection used by COPY.
+    """
+
+    return psycopg2.connect(
+        host=settings.POSTGRES_HOST,
+        port=settings.POSTGRES_PORT,
+        dbname=settings.POSTGRES_DB,
+        user=settings.POSTGRES_USER,
+        password=settings.POSTGRES_PASSWORD,
     )
