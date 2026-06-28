@@ -503,7 +503,7 @@ Potential enhancements include:
 Clone the repository.
 
 ```bash
-git clone <repository-url>
+git clone <https://github.com/carta131189/data-engineer-assessment>
 cd data-engineer-assessment
 ```
 
