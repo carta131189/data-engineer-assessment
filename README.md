@@ -257,6 +257,39 @@ Pipeline order:
 
 ---
 
+## Environment Variables
+
+Create a `.env` file based on `.env.example`.
+
+Example:
+
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=data_engineer
+DB_USER=postgres
+DB_PASSWORD=postgres
+
+CSV_PATH=data/data_jobs.csv
+```
+
+## Continuous Integration
+
+The project includes a GitHub Actions workflow located in:
+
+```
+.github/workflows/ci.yml
+```
+
+The pipeline automatically executes on every push and pull request.
+
+It performs:
+
+- Dependency installation
+- Test execution with Pytest
+
+This ensures that changes do not break the ETL pipeline.
+
 ## 13. Run Instructions
 
 ```bash

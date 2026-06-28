@@ -20,3 +20,5 @@ isort==5.13.2
 
 dbt-core==1.9.4
 dbt-postgres==1.9.0
+
+flake8==7.1.2

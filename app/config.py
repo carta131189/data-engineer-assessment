@@ -15,3 +15,6 @@ class Config:
     CSV_PATH = os.getenv("CSV_PATH")
     CSV_SEPARATOR = os.getenv("CSV_SEPARATOR", ";")
     CSV_ENCODING = os.getenv("CSV_ENCODING", "cp1252")
+
+    LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
+    LOG_FILE = os.getenv("LOG_FILE", "logs/pipeline.log")
