@@ -33,12 +33,6 @@ def load_raw_jobs(df):
 
     df["job_type_skills"] = df["job_type_skills"].apply(json.dumps)
 
-
-    print(df.dtypes)
-
-    print(df["job_posted_date"].dtype)
-
-    print(df["job_posted_date"].head())
     # ---------------------------------------------------------
     # Load table
     # ---------------------------------------------------------

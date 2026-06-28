@@ -10,7 +10,7 @@ from app.transform.skills import load_skills
 from app.transform.jobs import load_jobs
 from app.transform.job_skills import load_job_skills
 from app.transform.job_type_skills import load_job_type_skills
-
+from app.quality.validator import validate_raw_jobs
 
 def main():
 
@@ -27,6 +27,8 @@ def main():
     df = extract_csv()
 
     df = parse_dataframe(df)
+
+    df = validate_raw_jobs(df)
 
     load_raw_jobs(df)
 

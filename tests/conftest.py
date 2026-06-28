@@ -22,5 +22,9 @@ def sample_dataframe():
             "job_posted_date": ["25/06/2026 10:30"],
             "salary_year_avg": [80000],
             "salary_hour_avg": [40],
+
+            "job_work_from_home": [True],
+            "job_no_degree_mention": [False],
+            "job_health_insurance": [True],
         }
     )

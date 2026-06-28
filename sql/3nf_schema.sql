@@ -109,7 +109,7 @@ CREATE TABLE job_skills (
 
 CREATE TABLE job_type_skills(
 
-    job_id BIGINT NOT NULL,
+    job_id INTEGER  NOT NULL,
 
     skill_id INTEGER NOT NULL,
 
@@ -146,3 +146,6 @@ ON job_type_skills(job_id);
 
 CREATE INDEX idx_jobtypeskills_skill
 ON job_type_skills(skill_id);
+
+CREATE INDEX idx_jobs_raw_job
+ON jobs(raw_job_id);
